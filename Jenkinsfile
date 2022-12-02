@@ -1,11 +1,8 @@
 /* Requires the Docker Pipeline plugin */
 pipeline {
-    agent { docker { image 'esumana/my-go-httpserver06:go4web' } }
+    agent { docker { image 'golang:1.19.1-alpine' } }
     stages {
-        stage('build') {
-            environment {
-                  HOME="."
-                }
+        stage('build')
             steps {
                 sh 'go version'
             }
